@@ -33,12 +33,29 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~ MY GEM ~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  gem 'bootstrap', '~> 4.0.0.beta2.1'
+  gem 'font-awesome-rails'
+  gem 'jquery-rails'
+  gem 'stamp' #=> use for date manipulation
+
+  gem 'trix' #=> use for WYSIWYG editor
+  gem 'devise' #=> use for Administrative rights
+  gem 'paperclip', '~> 5.0.0' #=> use for image upload
+  gem 'figaro' #=> for use with secrets; e.g. aws for image upload 
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
