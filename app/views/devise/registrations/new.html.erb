@@ -4,8 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, placeholder: 'you@email.com' %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, placeholder: 'First & Last Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, placeholder: '@username' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, placeholder: 'Baton Rouge, LA' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.trix_editor :bio, placeholder: 'Something about you' %>
   </div>
 
   <div class="field">
