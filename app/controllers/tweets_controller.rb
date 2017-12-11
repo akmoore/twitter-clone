@@ -25,7 +25,6 @@ class TweetsController < ApplicationController
   end
 
   def update
-    
     if @tweet.update(tweet_params)
       redirect_to @tweet, notice: 'Successfully updated tweet'
     else
@@ -38,7 +37,11 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    
+    if @tweet.destroy
+      redirect_to tweets_url, notice: 'Tweet was successfully deleted.'
+    else
+      flash.now[:alert] = "Unable to delete tweet. Try Again."
+    end
   end
   
   private
