@@ -56,6 +56,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'annotate'
 end
 
 group :development do
