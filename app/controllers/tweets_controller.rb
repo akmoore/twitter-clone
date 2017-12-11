@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   before_action :get_tweet, only: [:edit, :show]
 
   def index
-    
+    @tweets = Tweet.all
   end
 
   def new
