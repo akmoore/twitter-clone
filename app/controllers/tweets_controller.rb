@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :get_tweet, only: [:edit, :show]
+  before_action :get_tweet, only: [:edit, :show, :update, :destroy]
 
   def index
     @tweets = Tweet.all
@@ -24,7 +24,21 @@ class TweetsController < ApplicationController
   def edit
   end
 
+  def update
+    
+    if @tweet.update(tweet_params)
+      redirect_to @tweet, notice: 'Successfully updated tweet'
+    else
+      flash.now[:alert] = "There was a problem in updating your tweet."
+      render :edit
+    end
+  end
+
   def show
+  end
+
+  def destroy
+    
   end
   
   private

@@ -15,7 +15,7 @@
     <!-- The Actual Form -->
     <div class="field form-group">
         <%= f.label :message %> <br>
-        <%= f.text_field :message, class: 'form-control' %>
+        <%= f.trix_editor :message, class: 'form-control' %>
     </div>
     <div class="field form-group">
         <%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'%>
