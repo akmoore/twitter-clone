@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Relationships
   has_many :tweets, dependent: :destroy
+  has_many :relationships
+  has_many :friends, through: :relationships
+  has_many :inverse_relationships, class_name: "Relationship"
+  has_many :inverse_friends, through: :inverse_relationships, source: :user
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
