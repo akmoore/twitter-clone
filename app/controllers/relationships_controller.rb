@@ -12,7 +12,11 @@ class RelationshipsController < ApplicationController
     end
 
     def destroy
-
+        @relationship = current_user.relationships.find(params[:id])
+        @relationship.destroy
+        @former_friend = User.find(params[:friend_id])
+        flash[:notice] = "You're nolonger following #{@former_friend.username}."
+        redirect_to profile_path(current_user.id)
     end
 
     private
